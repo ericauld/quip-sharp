@@ -44,12 +44,17 @@ def incoherence_preprocess(H, W, args):
         scaleWH = scaleWH.cpu()
 
     # randomized hadamard transformation on H, W
+
+    # EA: Here's "randomized Hadamard"...
+
     if args.incoh_mode == "had":
         SU = (torch.randn(n, device=device).sign() + 1e-5).sign().to(dtype_)
         SV = (torch.randn(m, device=device).sign() + 1e-5).sign().to(dtype_)
         Hr = RHT_H(Hr, SU)
         Wr = RHT_W(Wr, SU, SV)
     # randomized kronecker product on H, W
+
+    # EA: "Incoh mode", I guess "incoherent"
     elif args.incoh_mode == "kron":
         SU = utils.rand_ortho_butterfly_noblock(n).to(dtype_).to(device)
         SV = utils.rand_ortho_butterfly_noblock(m).to(dtype_).to(device)
@@ -60,6 +65,7 @@ def incoherence_preprocess(H, W, args):
     SV = SV.cpu()
     SU = SU.cpu()
 
+    # EA: A cholesky factorization
     Lhr = torch.linalg.cholesky(Hr)
     if not torch.all(torch.isfinite(Lhr)):
         return None

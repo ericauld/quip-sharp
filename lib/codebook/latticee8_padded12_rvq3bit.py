@@ -17,6 +17,7 @@ _E8P_CODESZ = 8
 
 def get_norm12():
     # 29 elements of norm 12 in E8 + 1/4
+    # EA: E8 + 1/4?
     return torch.tensor([
         [3, 1, 1, 1, 3, 3, 3, 3],
         [1, 3, 1, 1, 3, 3, 3, 3],
