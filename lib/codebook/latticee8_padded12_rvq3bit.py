@@ -150,6 +150,7 @@ _E81B_CACHED = get_e81bgrid()
 _E81B_NORM_CACHED = _E81B_CACHED.norm(dim=-1)**2
 
 
+# EA: This one is a nn.Module
 class E8P12RVQ3B_codebook(nn.Module):
 
     def __init__(self, inference=False):
