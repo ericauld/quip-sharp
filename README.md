@@ -1,4 +1,9 @@
 # QuIP#: Even Better LLM Quantization with Hadamard Incoherence and Lattice Codebooks [[arXiv]](https://arxiv.org/abs/2402.04396)
+
+EA: The only .cu files are
+> ./qsharp/quiptools/quiptools.cu
+> ./qsharp/quiptools/quiptools_e8p_gemv.cu
+
 This repository contains the official code for **QuIP#**, a weight-only post-training quantization method that achieves state-of-the-art performance in extreme compression ($\le 4$ bits per weight) regimes.
 QuIP# improves the incoherence processing of [QuIP](https://openreview.net/pdf?id=xrk9g5vcXR) by using the randomized Hadamrd transform (RHT). 
 QuIP# also introduces lattice codebooks based on the $E_8$ lattice and a fine-tuning scheme to further improve quantization quality.

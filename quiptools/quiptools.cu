@@ -8,6 +8,7 @@
 #include <cuda_runtime.h>
 #include <cuda_fp16.h>
 #include <mma.h>
+/* EA: What is this mma.h ? */
 
 #include <ATen/ATen.h>
 #include <ATen/Context.h>
